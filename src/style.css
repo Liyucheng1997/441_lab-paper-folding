@@ -1,0 +1,104 @@
+/* 页面样式：只引用 tokens.css 里的变量 */
+a { color: inherit; text-decoration: none; }
+.page { flex: 1; overflow: auto; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px 56px; }
+.wrap.wide { max-width: 1320px; }
+
+/* 顶栏 */
+.nav { flex-shrink: 0; background: var(--panel); border-bottom: 1px solid var(--line); }
+.nav-in { max-width: 1320px; margin: 0 auto; height: 52px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; letter-spacing: -0.02em; }
+
+/* 分段控件：白块浮在灰槽上 */
+.seg { display: inline-flex; background: var(--fill); border-radius: 99px; padding: 3px; gap: 2px; }
+.seg > * { border: 0; background: transparent; height: 28px; padding: 0 18px; border-radius: 99px; display: inline-flex; align-items: center; font-size: 13px; font-weight: 500; color: var(--text-2); transition: background 0.2s, color 0.2s; white-space: nowrap; }
+.seg > *.on { background: var(--panel); color: var(--text); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+.seg-sm > * { height: 24px; padding: 0 11px; font-size: 12px; }
+.seg-fill { display: flex; }
+.seg-fill > * { flex: 1; justify-content: center; padding: 0 4px; }
+
+/* 首页 */
+.hero { padding: 56px 0 12px; max-width: 720px; }
+.hero h1 { font-size: 40px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; margin: 0 0 14px; }
+.hero p { font-size: 16px; line-height: 1.7; color: var(--text-2); margin: 0 0 14px; }
+.hero-meta { font-size: 13px; color: var(--text-3); }
+.level { margin-top: 40px; }
+.level-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.level-head h2 { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin: 0; }
+.level-head span { color: var(--text-2); font-size: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: 18px; }
+.card { background: var(--panel); border-radius: var(--r-lg); box-shadow: var(--shadow-card); }
+.lesson-card { display: block; overflow: hidden; transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out); }
+.lesson-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+.thumb { aspect-ratio: 4 / 3; background: var(--canvas); display: flex; align-items: center; justify-content: center; }
+.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.thumb img:not([src]) { visibility: hidden; }
+.free-thumb { color: var(--primary); }
+.lc-body { padding: 14px 18px 18px; }
+.lc-title { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.lc-intro { color: var(--text-2); font-size: 13px; line-height: 1.55; margin: 6px 0 10px; min-height: 40px; }
+.lc-meta { color: var(--text-3); font-size: 12px; }
+.status { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; color: var(--text-2); }
+.status i { width: 7px; height: 7px; border-radius: 50%; background: var(--success); }
+.foot { margin-top: 48px; color: var(--text-3); font-size: 12px; text-align: center; }
+
+/* 教程页 */
+.lesson-top { display: flex; align-items: center; gap: 14px; padding: 20px 0 16px; flex-wrap: wrap; }
+.lesson-top h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; margin: 0; }
+.tag { height: 24px; padding: 0 10px; border-radius: 99px; background: var(--fill); color: var(--text-2); font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; }
+.lesson-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 18px; align-items: start; }
+.stage-card { padding: 14px; }
+.stage-wrap { position: relative; background: var(--canvas); border-radius: 14px; overflow: hidden; }
+#stage { height: min(58vh, 620px); min-height: 320px; }
+#stage canvas { display: block; touch-action: none; cursor: grab; }
+#stage canvas:active { cursor: grabbing; }
+.swatches { position: absolute; top: 12px; right: 12px; display: flex; gap: 7px; background: var(--panel); padding: 6px 8px; border-radius: 99px; box-shadow: var(--shadow-card); }
+.swatch-btn { width: 18px; height: 18px; border-radius: 50%; border: 0; padding: 0; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12); transition: transform 0.25s var(--spring); }
+.swatch-btn:hover { transform: scale(1.15); }
+.swatch-btn.on { box-shadow: 0 0 0 2px var(--panel), 0 0 0 4px var(--primary); }
+.now { padding: 16px 8px 4px; min-height: 112px; }
+.now-n { font-size: 12px; color: var(--text-3); font-weight: 500; }
+.now h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; margin: 4px 0 6px; }
+.now p { font-size: 15px; line-height: 1.7; color: var(--text-2); margin: 0; max-width: 760px; }
+.controls { display: flex; align-items: center; gap: 10px; padding: 12px 8px 6px; flex-wrap: wrap; }
+.controls .btn { height: 36px; }
+.controls .btn:disabled { opacity: 0.4; pointer-events: none; }
+.controls [data-act='play'] { min-width: 86px; }
+.scrub { flex: 1; min-width: 120px; }
+.auto { display: inline-flex; align-items: center; gap: 6px; color: var(--text-2); font-size: 12.5px; cursor: pointer; white-space: nowrap; }
+
+.side-card { padding: 16px 12px; position: sticky; top: 16px; }
+.side-title { font-size: 12px; font-weight: 500; color: var(--text-3); padding: 2px 8px 8px; }
+.steps { list-style: none; margin: 0; padding: 0; max-height: min(52vh, 560px); overflow: auto; }
+.steps li { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 10px; cursor: pointer; font-size: 13.5px; color: var(--text); transition: background 0.15s, color 0.15s; }
+.steps li:hover { background: var(--hover); }
+.steps li .num { width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; background: var(--fill); color: var(--text-2); font-size: 11.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+.steps li.past { color: var(--text-3); }
+.steps li.on { background: var(--primary-soft); color: var(--primary); font-weight: 500; }
+.steps li.on .num { background: var(--primary); color: #fff; }
+.legend { margin-top: 12px; padding: 12px 8px 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; font-size: 12.5px; color: var(--text-2); }
+.legend div { display: flex; align-items: center; gap: 8px; }
+.lg { width: 30px; height: 0; flex-shrink: 0; }
+.lg-v { border-top: 2px dashed var(--primary); }
+.lg-m { border-top: 2px dotted var(--text-2); }
+.lg-cut { width: 14px; height: 14px; border-radius: 4px; background: var(--text-2); }
+
+/* 自由剪纸 */
+.side-card .seg-fill { margin: 0 4px 14px; }
+.draw { width: 100%; aspect-ratio: 1; display: block; background: var(--canvas); border-radius: 14px; touch-action: none; cursor: crosshair; }
+.draw-hint { font-size: 12px; line-height: 1.6; padding: 10px 6px; }
+.draw-btns { display: flex; gap: 8px; padding: 0 4px; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .lesson-grid { grid-template-columns: 1fr; }
+  .side-card { position: static; }
+  .steps { max-height: none; }
+  #stage { height: 46vh; }
+  .hero { padding-top: 36px; }
+  .hero h1 { font-size: 30px; }
+}
+@media (max-width: 520px) {
+  .wrap, .nav-in { padding-left: 16px; padding-right: 16px; }
+  .seg > * { padding: 0 14px; }
+  .scrub { order: 10; flex-basis: 100%; }
+}
